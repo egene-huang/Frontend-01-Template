@@ -1,0 +1,28 @@
+## CMS GC策略
+配置: -Xms256M -Xmx256M -XX:+UseConcMarkSweepGC -XX:+PrintGCDetails
+```shell
+/Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home/bin/java -Xms256M -Xmx256M -XX:+UseConcMarkSweepGC -XX:+PrintGCDetails -javaagent:/Applications/IntelliJ IDEA.app/Contents/lib/idea_rt.jar=59377:/Applications/IntelliJ IDEA.app/Contents/bin -Dfile.encoding=UTF-8 -classpath /Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home/jre/lib/deploy.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home/jre/lib/ext/cldrdata.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home/jre/lib/ext/dnsns.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home/jre/lib/ext/jaccess.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home/jre/lib/ext/jfxrt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home/jre/lib/ext/localedata.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home/jre/lib/ext/nashorn.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home/jre/lib/ext/sunec.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home/jre/lib/ext/sunjce_provider.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home/jre/lib/ext/sunpkcs11.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home/jre/lib/ext/zipfs.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home/jre/lib/javaws.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home/jre/lib/jfxswt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home/jre/lib/management-agent.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home/jre/lib/plugin.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home/lib/ant-javafx.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home/lib/dt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home/lib/javafx-mx.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home/lib/jconsole.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home/lib/packager.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home/lib/sa-jdi.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home/lib/tools.jar:/Users/eugene/projects/Frontend-01-Template/out/production/Frontend-01-Template com.geek.GCLogAnalysis
+[GC (Allocation Failure) [ParNew: 69786K->8703K(78656K), 0.0283222 secs] 69786K->66192K(253440K), 0.0283753 secs] [Times: user=0.12 sys=0.06, real=0.03 secs] 
+[GC (Allocation Failure) [ParNew: 78374K->8704K(78656K), 0.0365401 secs] 135863K->135355K(253440K), 0.0365746 secs] [Times: user=0.14 sys=0.06, real=0.04 secs] 
+[GC (CMS Initial Mark) [1 CMS-initial-mark: 126651K(174784K)] 137030K(253440K), 0.0040146 secs] [Times: user=0.01 sys=0.01, real=0.01 secs] 
+[CMS-concurrent-mark-start]
+[GC (Allocation Failure) [ParNew: 78561K->78561K(78656K), 0.0000164 secs][CMS[CMS-concurrent-mark: 0.011/0.013 secs] [Times: user=0.03 sys=0.00, real=0.01 secs] 
+ (concurrent mode failure): 126651K->174754K(174784K), 0.2091758 secs] 205213K->204184K(253440K), [Metaspace: 3328K->3328K(1056768K)], 0.2092509 secs] [Times: user=0.20 sys=0.01, real=0.21 secs] 
+[Full GC (Allocation Failure) [CMS: 174754K->174754K(174784K), 0.1998500 secs] 253368K->251828K(253440K), [Metaspace: 3328K->3328K(1056768K)], 0.1998822 secs] [Times: user=0.20 sys=0.00, real=0.20 secs] 
+[GC (CMS Initial Mark) [1 CMS-initial-mark: 174754K(174784K)] 252065K(253440K), 0.0457446 secs] [Times: user=0.05 sys=0.00, real=0.04 secs] 
+[CMS-concurrent-mark-start]
+[Full GC (Allocation Failure) [CMS[CMS-concurrent-mark: 0.029/0.031 secs] [Times: user=0.06 sys=0.00, real=0.03 secs] 
+ (concurrent mode failure): 174754K->174754K(174784K), 0.2231542 secs] 253339K->253256K(253440K), [Metaspace: 3328K->3328K(1056768K)], 0.2232044 secs] [Times: user=0.25 sys=0.00, real=0.22 secs] 
+[Full GC (Allocation Failure) [CMS: 174754K->174734K(174784K), 0.2085175 secs] 253256K->253236K(253440K), [Metaspace: 3328K->3328K(1056768K)], 0.2085502 secs] [Times: user=0.21 sys=0.01, real=0.21 secs] 
+Heap
+ par new generation   total 78656K, used 78608K [0x00000007b0000000, 0x00000007b5550000, 0x00000007b5550000)
+  eden space 69952K, 100% used [0x00000007b0000000, 0x00000007b4450000, 0x00000007b4450000)
+  from space 8704K,  99% used [0x00000007b4450000, 0x00000007b4cc4200, 0x00000007b4cd0000)
+  to   space 8704K,   0% used [0x00000007b4cd0000, 0x00000007b4cd0000, 0x00000007b5550000)
+ concurrent mark-sweep generation total 174784K, used 174734K [0x00000007b5550000, 0x00000007c0000000, 0x00000007c0000000)
+ Metaspace       used 3360K, capacity 4500K, committed 4864K, reserved 1056768K
+  class space    used 369K, capacity 388K, committed 512K, reserved 1048576K
+Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
+	at com.geek.GCLogAnalysis.mock(GCLogAnalysis.java:79)
+	at com.geek.GCLogAnalysis.main(GCLogAnalysis.java:26)
+```
