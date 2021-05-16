@@ -1,3 +1,4 @@
+use MY_DB;
 CREATE TABLE product_base_info
 (
     `sku_id` BIGINT NOT NULL,
@@ -8,4 +9,4 @@ CREATE TABLE product_base_info
     `create_time` timestamp NOT NULL,
     `update_time` timestamp NOT NULL,
     PRIMARY KEY ( `sku_id` )
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 comment =`基本商品信息表`;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 comment ='基本商品信息表';

@@ -1,3 +1,5 @@
+create database MY_DB;
+use MY_DB;
 CREATE TABLE order_info
 (
     `order_id` BIGINT NOT NULL,
@@ -9,4 +11,4 @@ CREATE TABLE order_info
     `create_time` timestamp NOT NULL,
     `update_time` timestamp NOT NULL,
     PRIMARY KEY ( `order_id` )
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 comment =`基本订单信息表`;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 comment ='基本订单信息表';
