@@ -15,7 +15,7 @@ public class GCLogAnalysis {
     //-Xms256M -Xmx256M -XX:+UseG1GC -XX:MaxGCPauseMillis=100 -XX:+PrintGCDetails
     public static void main(String[] args) {
         long l = System.currentTimeMillis();
-        int interval = 30 * 1000;
+        int interval = 300 * 1000;
         Random random = new Random();
         Object[] objects = new Object[1000];
         HashMap<KeyWrap, Object> cache = new HashMap<>(1024);
